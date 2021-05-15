@@ -10,6 +10,6 @@ module.exports.getDate = function (){
 }
 /*to create one more module
 this way functions are shared accross dir and files
-module.exports.getData = function () { 
+module.exports.getLocation = function () { 
 }
 */

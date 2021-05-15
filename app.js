@@ -10,7 +10,7 @@ app.use(express.static("public"));
 const date = require(__dirname+'/modules.js');
 
 //setup ejs
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs');
 var itemList = [];
 var workItem = [];
 
@@ -24,7 +24,7 @@ app.get("/", function (req, res) {
         month: "2-digit",
         day: "numeric"
 	}*/
-	let day = date.getDate()
+	let day = date.getDate();
 	//render information to ejs
 	res.render("list",{day: day, itemList: itemList});
  });
@@ -32,13 +32,13 @@ app.get("/", function (req, res) {
 app.post("/", (req, res) => {
 	var item = req.body.newItem;
 	var type = req.body.btn;
-	console.log(req.body)
+	console.log(req.body);
 	if (item){
 		if (type === "Work"){
 			workItem.push(item);
-			res.redirect("/work")
+			res.redirect("/work");
 		}else{
-			itemList.push(item)
+			itemList.push(item);
 			res.redirect("/");
 		}
 	}
